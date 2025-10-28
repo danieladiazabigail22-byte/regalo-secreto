@@ -47,6 +47,10 @@ body {
     transition: transform 0.3s ease;
 }
 
+.magazine-cover:hover {
+    transform: translateY(-5px);
+}
+
 .cover-title {
     font-family: 'Pacifico', cursive;
     font-size: 3rem;
@@ -64,6 +68,32 @@ body {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     z-index: 2;
 }
+
+/* Ilustraciones de portada (float) */
+.cover-illustrations {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.illustration {
+    position: absolute;
+    font-size: 3rem;
+    animation: float 4s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+.bear1 { top: 10%; left: 10%; animation-delay: 0s; }
+.cat1 { top: 15%; right: 15%; animation-delay: 1s; }
+.heart1 { top: 60%; left: 20%; animation-delay: 0.5s; }
+.flower1 { top: 70%; right: 25%; animation-delay: 1.5s; }
+.star1 { top: 30%; left: 80%; animation-delay: 2s; }
 
 .page {
     transform-origin: left center;
@@ -83,6 +113,22 @@ body {
     position: relative;
 }
 
+.page-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #ff6b9d, #c44569);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-subtitle {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
+    color: #666;
+}
+
 .page-content {
     /* Altura fija para desktop */
     height: calc(100% - 120px); 
@@ -91,9 +137,16 @@ body {
     padding-bottom: 20px; 
 }
 
-/* (El resto de estilos de contenido - photo-grid, love-list, etc. - se mantiene) */
+/* Page-specific backgrounds (se mantiene) */
+.page1 { background: linear-gradient(135deg, #fff5f5 0%, #ffe4e6 100%); }
+.page2 { background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%); }
+.page3 { background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%); }
+.page4 { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); }
+.page5 { background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); }
+.page6 { background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%); }
+.page7 { background: linear-gradient(135deg, #ffeef8 0%, #f0e6ff 50%, #e6f3ff 100%); }
 
-/* Navigation */
+/* Navigation (se mantiene) */
 .nav-buttons {
     position: fixed;
     bottom: 30px;
@@ -117,6 +170,19 @@ body {
     box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
 }
 
+.nav-btn:hover {
+    background: #ff5582;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
+}
+
+.nav-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
 .page-indicator {
     position: fixed;
     top: 30px;
@@ -131,42 +197,92 @@ body {
 }
 
 /* ========================================================== */
-/* RESPONSIVE DESIGN (Media Queries) - ¡AJUSTES CLAVE AQUÍ! */
+/* ESTILOS DE CONTENIDO (se mantiene) */
 /* ========================================================== */
 
-/* Aplicar estos cambios a partir de pantallas de tablet y móvil */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    justify-items: center;
+}
+
+/* (Se mantienen los estilos de photo-frame, love-list, calendar, song-player, polaroid, y letter) */
+
+/* Page illustrations (se mantiene) */
+.page-illustration {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.6;
+    animation: gentleFloat 6s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+.page1 .page-illustration:nth-child(1) { top: 10%; right: 10%; animation-delay: 0s; }
+.page1 .page-illustration:nth-child(2) { bottom: 15%; left: 15%; animation-delay: 1s; }
+.page1 .page-illustration:nth-child(3) { top: 50%; right: 5%; animation-delay: 2s; }
+
+/* ... el resto de ilustraciones de página ... */
+
+/* Estilos de la página 7 (The End) */
+.page7 .page-title {
+    color: #ff6b9d;
+}
+
+.page7 .page-illustration {
+    position: absolute;
+    font-size: 2.5rem;
+    opacity: 0.6;
+    animation: gentleFloat 6s ease-in-out infinite;
+}
+
+/* ========================================================== */
+/* RESPONSIVE DESIGN (Media Queries) - ¡CORRECCIÓN FINAL AQUÍ! */
+/* ========================================================== */
+
 @media (max-width: 900px) {
-    
-    /* 1. ELIMINAR ESPACIO ALREDEDOR DEL BODY */
+    /* MÓVIL: Full-Screen */
+
+    /* 1. ELIMINAR EL PADDING DEL BODY PARA ELIMINAR BORDES EXTERNOS */
     body {
         padding: 0;
     }
     
     .magazine-container {
-        max-width: 100%; /* Ocupar todo el ancho disponible */
+        max-width: 100%;
         margin: 0;
     }
 
-    /* 2. HACER QUE LAS PÁGINAS SE EXPANDAN (FULL-SCREEN LOOK) */
+    /* 2. FORZAR TAMAÑO Y FLUIDEZ (OCUPAR TODA LA PANTALLA) */
     .magazine-cover, .page, .page7 {
         width: 100%;
-        height: auto;
-        min-height: 90vh; /* Ocupar el 90% del alto de la pantalla */
+        height: 100vh; /* CLAVE: Usa el alto total del viewport (100% de la pantalla visible) */
+        min-height: 100vh; 
         
-        /* 3. ELIMINAR EL EFECTO DE CARTA FLOTANTE */
+        /* ELIMINAR EFECTO DE CARTA FLOTANTE */
         box-shadow: none;
         border-radius: 0; 
-        padding: 20px; /* Padding interno */
-    }
-    
-    .page-content {
-        /* Permitir que el contenido se extienda y haga scroll si es necesario */
-        height: auto; 
-        max-height: calc(90vh - 120px - 20px); /* 120px para el header, 20px de padding */
-        padding-bottom: 50px; /* Más espacio abajo para el nav-buttons */
+        padding: 20px; 
     }
 
-    /* Ajustar tamaños de fuente para móvil */
+    .page-content {
+        /* Altura del contenido debe ser 100vh - header - padding */
+        height: calc(100vh - 120px - 40px); 
+        padding-bottom: 50px; 
+    }
+    
+    /* 3. ARREGLAR EMOJIS (Reducir su tamaño y opacidad para evitar solapamiento) */
+    .illustration, .page-illustration {
+        font-size: 1.5rem; 
+        opacity: 0.4;
+    }
+    
+    /* Ajustar tamaños de fuente para que quepa mejor */
     .cover-title {
         font-size: 2.5rem;
     }
@@ -174,31 +290,7 @@ body {
         font-size: 2rem;
     }
     
-    /* Ajustar indicadores y navegación */
-    .page-indicator {
-        top: 10px;
-        right: 10px;
-    }
-
-    .nav-buttons {
-        bottom: 10px;
-        gap: 10px;
-    }
-
-    .nav-btn {
-        padding: 10px 15px;
-        font-size: 1rem;
-    }
-
-    /* Reducir el tamaño de la letra en el textarea para que quepa mejor */
-    .letter-text {
-        font-size: 1.1rem;
-        line-height: 1.5;
-        height: 200px;
-        min-height: 200px;
-    }
-
-    /* Forzar que las cuadrículas de fotos tengan una columna en móviles pequeños para que se vean más grandes */
+    /* Ajustes para que el contenido sea vertical en móviles pequeños */
     @media (max-width: 480px) {
         .photo-grid, .polaroid-grid {
             grid-template-columns: 1fr;
@@ -207,6 +299,12 @@ body {
         .photo-frame {
             max-width: 90%;
             margin: 0 auto;
+        }
+        .letter-text {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            height: 200px;
+            min-height: 200px;
         }
     }
 }
