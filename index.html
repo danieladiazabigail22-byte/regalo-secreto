@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>bro &lt;3</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>bro 18</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Dancing+Script:wght@400;600;700&family=Kalam:wght@300;400;700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+    
+  <body>
+
+<div class="magazine-container">
+  <div class="magazine-cover" onclick="startReading()">
+    <div class="cover-illustrations">
+      <div class="illustration bear1">🧸</div>
+      <div class="illustration cat1">🐱</div>
+      <div class="illustration heart1">💖</div>
+      <div class="illustration flower1">🌸</div>
+      <div class="illustration star1">⭐</div>
+    </div>
+    <h1 class="cover-title">Nuestra Primer Mes</h1>
+    <p class="cover-subtitle">Un mes lleno de momentos randoms ♡</p>
+    <div
+      style="position: absolute; bottom: 30px; font-family: 'Caveat', cursive; color: white; font-size: 1.1rem;"
+    >
+      Haz clic para abrir el coso 📖
+    </div>
+  </div>
+
+  <div class="page page1" id="page1">
+    <div class="page-illustration">🧸</div>
+    <div class="page-illustration">💕</div>
+    <div class="page-illustration">🌟</div>
+
+    <div class="page-header">
+      <h2 class="page-title">💑 Our Moments</h2>
+      <p class="page-subtitle">
+        Los recuerdos (hay fotos secretas que no sabes que existen)
+      </p>
+    </div>
+    <div class="page-content">
+      <div class="photo-grid">
+        <div class="photo-frame">
+          <img
+            src="https://i.ibb.co/mFb49yKs/primera-vez.jpg"
+            alt="Primera vez que nos conocimos"
+            class="moment-img"
+          />
+          <span contenteditable="true" class="editable"
+            >Primera vez que nos conocimos ♡</span
+          >
+        </div>
+        <div class="photo-frame">
+          <img
+            src="https://i.ibb.co/8yJP8rK/cita.jpg"
+            alt="Citas"
+            class="moment-img"
+          />
+          <span contenteditable="true" class="editable">Citas (o no?)</span>
+        </div>
+        <div class="photo-frame">
+          <img
+            src="https://i.ibb.co/nqzjWx7W/favorito.jpg"
+            alt="Momento favorito"
+            class="moment-img"
+          />
+          <span contenteditable="true" class="editable">Momento favorito</span>
+        </div>
+        <div class="photo-frame">
+          <img
+            src="https://i.ibb.co/C34Z8Qt7/mas-fotos.jpg"
+            alt="Más fotos"
+            class="moment-img"
+          />
+          <span contenteditable="true" class="editable">Más fotos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page2" id="page2">
+    <div class="page-illustration">🐱</div>
+    <div class="page-illustration">🌺</div>
+    <div class="page-illustration">💚</div>
+
+    <div class="page-header">
+      <h2 class="page-title">💬 Things I Love About You</h2>
+      <p class="page-subtitle">Todas las razones por las que eres especial</p>
+    </div>
+    <div class="page-content">
+      <ul class="love-list" id="loveList">
+        <li class="love-item" contenteditable="true">Tus ojos de emo</li>
+        <li class="love-item" contenteditable="true">
+          Como me haces reír siempre
+        </li>
+        <li class="love-item" contenteditable="true">Tu forma de cuidarme</li>
+        <li class="love-item" contenteditable="true">Los abrazos que me das</li>
+        <li class="love-item" contenteditable="true">
+          Los regalos que me das (basta)
+        </li>
+        <li class="love-item" contenteditable="true">Lo simp que sos</li>
+      </ul>
+      <button class="add-button" onclick="addLoveReason()">
+        Agregar más razones ♡
+      </button>
+    </div>
+  </div>
+
+  <div class="page page3" id="page3">
+    <div class="page-illustration">🌻</div>
+    <div class="page-illustration">🦋</div>
+
+    <div class="page-header">
+      <h2 class="page-title">📅 Our Day</h2>
+      <p class="page-subtitle">El día más especial del mes</p>
+    </div>
+    <div class="page-content">
+      <p
+        style="text-align: center; font-family: 'Caveat', cursive; font-size: 1.2rem; color: #666; margin-bottom: 20px;"
+      >
+        ¡Marca si sabes qué dia es, sino jodete bro! 💕
+      </p>
+      <div class="calendar" id="calendar">
+        </div>
+    </div>
+  </div>
+
+  <div class="page page4" id="page4">
+    <div class="page-illustration">🎵</div>
+    <div class="page-illustration">🎶</div>
+
+    <div class="page-header">
+      <h2 class="page-title">🎵 Our Song</h2>
+      <p class="page-subtitle">La canción que siempre me recuerda a ti</p>
+    </div>
+    <div class="page-content">
+      <div class="song-player">
+        <div class="album-cover">🎵</div>
+        <div class="song-info">
+          <h3 class="song-title" contenteditable="true">
+            "Nuestra" canción especial
+          </h3>
+          <p class="artist" contenteditable="true">Daniel Caesar "Blessed"</p>
+          <p
+            style="font-family: 'Caveat', cursive; color: #666; margin-top: 10px;"
+          >
+            "Esta canción siempre me hace pensar en ti...medio deprimente igual"
+            💕
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page5" id="page5">
+    <div class="page-illustration">📸</div>
+    <div class="page-illustration">🌈</div>
+
+    <div class="page-header">
+      <h2 class="page-title">🎁 Mini Polaroids</h2>
+      <p class="page-subtitle">Pequeños momentos, grandes recuerdos</p>
+    </div>
+    <div class="page-content">
+      <div class="polaroid-grid">
+        <div class="polaroid">
+          <div class="polaroid-image polaroid-effect">
+            <img
+              src="https://i.ibb.co/84S23532/polaroid1.jpg"
+              alt="Polaroid 1"
+            />
+          </div>
+          <div class="polaroid-caption" contenteditable="true">
+            Mi persona favorita
+          </div>
+        </div>
+        <div class="polaroid">
+          <div class="polaroid-image polaroid-effect">
+            <img
+              src="https://i.ibb.co/gMQLd5wK/polaroid2.jpg"
+              alt="Polaroid 2"
+            />
+          </div>
+          <div class="polaroid-caption" contenteditable="true">
+            Perfect match
+          </div>
+        </div>
+        <div class="polaroid">
+          <div class="polaroid-image polaroid-effect">
+            <img
+              src="https://i.ibb.co/d42L42kp/polaroid3.jpg"
+              alt="Polaroid 3"
+            />
+          </div>
+          <div class="polaroid-caption" contenteditable="true">
+            Siempre felices
+          </div>
+        </div>
+        <div class="polaroid">
+          <div class="polaroid-image polaroid-effect">
+            <img
+              src="https://i.ibb.co/Z63Tdpqy/polaroid4.jpg"
+              alt="Polaroid 4"
+            />
+          </div>
+          <div class="polaroid-caption" contenteditable="true">
+            Para siempre ♡
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page page6" id="page6">
+    <div class="page-illustration">✉️</div>
+    <div class="page-illustration">🌹</div>
+
+    <div class="page-header">
+      <h2 class="page-title">✍️ A Letter for You</h2>
+      <p class="page-subtitle">Mis palabras del corazón</p>
+    </div>
+    <div class="page-content">
+      <div class="letter-paper">
+        <textarea
+          class="letter-text"
+          placeholder="Ma' bro,
+
+En este primer mes juntos he descubierto que eres la persona que hace que cada día sea especial. Me aguantaste un mes, super admirable la verdad (joda). 
+
+Me encanta como me haces reír, como me cuidas, y como haces que me sienta la persona más afortunada y amada del mundo. Se que te digo simp a cada rato pero no por hater sino porque me encanta. 
+
+Me encanta y lo que más amo es que entiendes todo lo que te digo, y me das la seguridad de poder contarte todo lo que siento y quiero sin dudarlo ni un poco. 
+
+Hoy es 26 de octubre, medio jugado el regalo, pero si lo estás viendo es porque salió bien. Me mandaste mensaje pero no te contesté por obvias razones. Quiero que sepas que, aunque no te lo diga ni demuestre tan seguido, me gustas y te quiero mucho y como no se que regalarte pintó momento prograadora. AH y yo soy re ansiosa y no me puedo guardar las sorpresas, para que veas las ganas que tengo de contarte que estoy haciendo but I CAN'T. 
+
+Y nada, ahora es carta en español por que es mas easy y no hay errores de traducción.
+
+Si llegas a ver este regalo es porque si salió bien y por que me gustó como quedó, y sino vas a quedar con la duda bro.
+
+Espero que este sea el primero de muchos meses más juntos. 
+
+Con todo mi amor,
+[Tu bro, Dani] ♡
+
+P.D: Eres lo mejor que me ha pasado 🧸💕"
+        ></textarea>
+      </div>
+    </div>
+  </div>
+  
+    <div class="page page7" id="page7">
+    <div class="page-illustration">🧸</div>
+    <div class="page-illustration">💖</div>
+    <div class="page-illustration">🌸</div>
+
+    <div class="page-header">
+      <h2 class="page-title">💖 The End</h2>
+    </div>
+
+    <div
+      class="page-content"
+      style="display:flex; flex-direction:column; align-items:center; justify-content:center;"
+    >
+      <p
+        style="font-family:'Caveat', cursive; font-size:1.5rem; color:#555; text-align:center; max-width:400px;"
+      >
+        Gracias por este primer mes, y por todos los que vienen… ♡
+      </p>
+
+      <div
+        class="polaroid"
+        id="sorpresaBtn"
+        style="margin-top:25px; cursor:pointer;"
+      >
+        <div
+          class="polaroid-image"
+          style="height:120px; display:flex; align-items:center; justify-content:center; background:#f8f9fa;"
+        >
+          🎥 Sorpresa 🎥
+        </div>
+        <div
+          class="polaroid-caption"
+          style="text-align:center; font-family:'Caveat', cursive; font-size:1.1rem; color:#666;"
+        >
+          Haz click aquí
+        </div>
+      </div>
+
+      <iframe
+        id="rickVideo"
+        width="300"
+        height="169"
+        style="display:none; border-radius:15px; margin-top:15px; transform: scale(0);"
+        src="https://www.youtube.com/embed/PyoRdu-i0AQ"
+        title="Rickroll Video"
+        frameborder="0"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      >
+      </iframe>
+
+      <p
+        style="font-family:'Caveat', cursive; font-size:1rem; color:#aaa; margin-top:30px;"
+      >
+        Octubre 2025
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="nav-buttons">
+  <button class="nav-btn" id="prevBtn" onclick="previousPage()" disabled>
+    ← Anterior
+  </button>
+  <button class="nav-btn" id="nextBtn" onclick="nextPage()">Siguiente →</button>
+</div>
+
+<div class="page-indicator" id="pageIndicator">Portada</div>
+
+<script src="./script.js"></script>
+
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
